@@ -38,13 +38,13 @@ function letterCount(string) {
   var output={};
   // Split the string into an array of letters
   var stringAsArray = string.split("");
-  stringAsArray.forEach(function(el) {
+  stringAsArray.forEach(function(letter) {
     // If the output object already contains the letter, increment the count by 1
-    if (output[el]) {
-      output[el] += 1;
+    if (output[letter]) {
+      output[letter] += 1;
     // Otherwise (if it doesn't exist in the object yet), add the letter to the object with a count of 1
     } else {
-      output[el] = 1;
+      output[letter] = 1;
     }
   });
   // After you iterate through the entire word array, return the object
@@ -54,14 +54,14 @@ function letterCount(string) {
 // --------------- With bonuses ---------------
 function letterCount(string) {
   var output={};
-  string.toLowerCase().replace(/[^a-zA-Z ]/g, "").split("").forEach(function(el) {
+  string.toLowerCase().replace(/[^a-zA-Z ]/g, "").split("").forEach(function(letter) {
     // .toLowerCase() downcases the entire word so that capital/lowercase letters are identified as the same letter
     // ..replace(/[^a-zA-Z ]/g, "") uses something called REGEX, which we'll talk about in-depth when we get to Ruby
     // It basically replaces anything that's not a letter a-z with an empty string (deletes it)
-    if (!output[el]) {
-      output[el] = 1;
+    if (!output[letter]) {
+      output[letter] = 1;
     } else {
-      output[el] += 1;
+      output[letter] += 1;
     }
   });
   // Return the object with counts converted into percentages
