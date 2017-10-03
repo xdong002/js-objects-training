@@ -34,3 +34,24 @@
 */
 
 // YOUR CODE HERE
+function daysUntilDate(dob){
+	d1 = new Date();
+	d2 = new Date(dob);
+	var ydiff = d1.getYear() - d2.getYear();
+  var ddiff = 365 * ydiff;
+	var diff = Math.abs(d2-d1);
+	days = diff / (1000*60*60*24);
+	days = Math.round(days);
+	days = days-ddiff;
+	days = Math.abs(days);
+	return days;
+};
+
+
+function birthdayReminder(people){
+	for (var i = 0; i <people.length; i++){
+		daysUntilDate(peoplelist[i].dob);
+		console.log(peoplelist[i].name +" birthday is in "+ daysUntilDate(peoplelist[i].dob)+ " days");
+
+  }
+}
